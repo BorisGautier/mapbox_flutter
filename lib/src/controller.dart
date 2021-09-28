@@ -57,7 +57,9 @@ class MapboxFlutterMapController extends ChangeNotifier {
       }
     });
 
-    MapboxFlutterPlatfom.getInstance(_id).onSymbolTappedPlatform.add((symbolId) {
+    MapboxFlutterPlatfom.getInstance(_id)
+        .onSymbolTappedPlatform
+        .add((symbolId) {
       final symbol = _symbols[symbolId];
       if (symbol != null) {
         onSymbolTapped(symbol);
@@ -71,7 +73,9 @@ class MapboxFlutterMapController extends ChangeNotifier {
       }
     });
 
-    MapboxFlutterPlatfom.getInstance(_id).onCircleTappedPlatform.add((circleId) {
+    MapboxFlutterPlatfom.getInstance(_id)
+        .onCircleTappedPlatform
+        .add((circleId) {
       final circle = _circles[circleId];
       if (circle != null) {
         onCircleTapped(circle);
@@ -162,7 +166,8 @@ class MapboxFlutterMapController extends ChangeNotifier {
     });
   }
 
-  static MapboxFlutterMapController init(int id, CameraPosition initialCameraPosition,
+  static MapboxFlutterMapController init(
+      int id, CameraPosition initialCameraPosition,
       {OnStyleLoadedCallback? onStyleLoadedCallback,
       OnMapClickCallback? onMapClick,
       OnUserLocationUpdated? onUserLocationUpdated,
@@ -269,8 +274,8 @@ class MapboxFlutterMapController extends ChangeNotifier {
   ///
   /// The returned [Future] completes after listeners have been notified.
   Future<void> _updateMapOptions(Map<String, dynamic> optionsUpdate) async {
-    _cameraPosition =
-        await MapboxFlutterPlatfom.getInstance(_id).updateMapOptions(optionsUpdate);
+    _cameraPosition = await MapboxFlutterPlatfom.getInstance(_id)
+        .updateMapOptions(optionsUpdate);
     notifyListeners();
   }
 
@@ -476,8 +481,8 @@ class MapboxFlutterMapController extends ChangeNotifier {
   Future<Line> addLine(LineOptions options, [Map? data]) async {
     final LineOptions effectiveOptions =
         LineOptions.defaultOptions.copyWith(options);
-    final line =
-        await MapboxFlutterPlatfom.getInstance(_id).addLine(effectiveOptions, data);
+    final line = await MapboxFlutterPlatfom.getInstance(_id)
+        .addLine(effectiveOptions, data);
     _lines[line.id] = line;
     notifyListeners();
     return line;
@@ -682,8 +687,8 @@ class MapboxFlutterMapController extends ChangeNotifier {
   Future<Fill> addFill(FillOptions options, [Map? data]) async {
     final FillOptions effectiveOptions =
         FillOptions.defaultOptions.copyWith(options);
-    final fill =
-        await MapboxFlutterPlatfom.getInstance(_id).addFill(effectiveOptions, data);
+    final fill = await MapboxFlutterPlatfom.getInstance(_id)
+        .addFill(effectiveOptions, data);
     _fills[fill.id] = fill;
     notifyListeners();
     return fill;
@@ -833,7 +838,8 @@ class MapboxFlutterMapController extends ChangeNotifier {
 
   /// For more information on what this does, see https://docs.mapbox.com/help/troubleshooting/optimize-map-label-placement/#label-collision
   Future<void> setSymbolIconAllowOverlap(bool enable) async {
-    await MapboxFlutterPlatfom.getInstance(_id).setSymbolIconAllowOverlap(enable);
+    await MapboxFlutterPlatfom.getInstance(_id)
+        .setSymbolIconAllowOverlap(enable);
   }
 
   /// For more information on what this does, see https://docs.mapbox.com/help/troubleshooting/optimize-map-label-placement/#label-collision
@@ -844,7 +850,8 @@ class MapboxFlutterMapController extends ChangeNotifier {
 
   /// For more information on what this does, see https://docs.mapbox.com/help/troubleshooting/optimize-map-label-placement/#label-collision
   Future<void> setSymbolTextAllowOverlap(bool enable) async {
-    await MapboxFlutterPlatfom.getInstance(_id).setSymbolTextAllowOverlap(enable);
+    await MapboxFlutterPlatfom.getInstance(_id)
+        .setSymbolTextAllowOverlap(enable);
   }
 
   /// For more information on what this does, see https://docs.mapbox.com/help/troubleshooting/optimize-map-label-placement/#label-collision
@@ -862,7 +869,8 @@ class MapboxFlutterMapController extends ChangeNotifier {
 
   /// Removes previously added image source by id
   Future<void> removeImageSource(String imageSourceId) {
-    return MapboxFlutterPlatfom.getInstance(_id).removeImageSource(imageSourceId);
+    return MapboxFlutterPlatfom.getInstance(_id)
+        .removeImageSource(imageSourceId);
   }
 
   /// Adds a Mapbox style layer to the map's style at render time.

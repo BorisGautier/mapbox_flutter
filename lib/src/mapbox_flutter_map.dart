@@ -205,7 +205,8 @@ class _MapboxFlutterMapState extends State<MapboxFlutterMap> {
       Completer<MapboxFlutterMapController>();
 
   late _MapboxMapOptions _mapboxMapOptions;
-  final MapboxFlutterPlatfom _mapboxGlPlatform = MapboxFlutterPlatfom.createInstance();
+  final MapboxFlutterPlatfom _mapboxGlPlatform =
+      MapboxFlutterPlatfom.createInstance();
 
   @override
   Widget build(BuildContext context) {
@@ -252,7 +253,8 @@ class _MapboxFlutterMapState extends State<MapboxFlutterMap> {
 
   Future<void> onPlatformViewCreated(int id) async {
     MapboxFlutterPlatfom.addInstance(id, _mapboxGlPlatform);
-    final MapboxFlutterMapController controller = MapboxFlutterMapController.init(
+    final MapboxFlutterMapController controller =
+        MapboxFlutterMapController.init(
       id,
       widget.initialCameraPosition,
       onStyleLoadedCallback: () {

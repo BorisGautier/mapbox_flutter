@@ -1,4 +1,8 @@
-# Flutter Mapbox GL
+# Flutter Mapbox Flutter
+
+This project is inspired by [Mapbox_gl](https://github.com/tobrun/flutter-mapbox-gl)
+
+This project also integrates the Null_Safety
 
 We welcome [feedback](https://github.com/BorisGautier/mapbox_flutter/issues) and contributions.
 
