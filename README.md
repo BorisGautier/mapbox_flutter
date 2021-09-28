@@ -1,4 +1,4 @@
-# Flutter Mapbox Flutter
+# Mapbox Flutter
 
 This project is inspired by [Mapbox_gl](https://github.com/tobrun/flutter-mapbox-gl)
 
@@ -16,7 +16,7 @@ We welcome [feedback](https://github.com/BorisGautier/mapbox_flutter/issues) and
 - Add a secret Mapbox access token for downloading the SDK
 - Connect a mobile device or start an emulator, simulator or chrome
 - Locate the id of a the device with `flutter devices`
-- Run the app with `cd flutter_mapbox/example && flutter packages get && flutter run -d {device_id}`
+- Run the app with `cd mapbox_flutter/example && flutter packages get && flutter run -d {device_id}`
 
 ## Adding a Mapbox Access Token
 

@@ -1,6 +1,6 @@
 name: mapbox_flutter
 description: A new flutter plugin for mapbox. You can use it for your map backgrounds inside flutter applications
-version: 1.0.0-dev.1.0
+version: 1.0.0-dev.1.1
 homepage: https://github.com/BorisGautier/mapbox_flutter
 
 environment:
