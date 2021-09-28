@@ -1,3 +1,5 @@
-## 0.0.1
+## [1.0.0-dev.1.0] - September 28, 2021
 
-* TODO: Describe initial release.
+* Update mapbox_gl plugin to mapbox_flutter plugin
+* Support null safety
+* migrate to flutter 2
