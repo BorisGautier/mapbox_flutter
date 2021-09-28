@@ -12,6 +12,9 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
+  image: ^3.0.5
+  meta: ^1.7.0
+  mapbox_gl_dart: ^0.2.0-nullsafety
 
 dev_dependencies:
   flutter_test:
@@ -35,7 +38,7 @@ flutter:
       ios:
         pluginClass: MapboxFlutterPlugin
       web:
-        pluginClass: MapboxFlutterWeb
+        pluginClass: MapboxFlutterPlugin
         fileName: mapbox_flutter_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:

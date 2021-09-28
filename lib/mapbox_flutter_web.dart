@@ -1,44 +1,31 @@
+library mapbox_flutter;
+
 import 'dart:async';
-// In order to *not* need this ignore, consider extracting the "web" version
-// of your plugin as a separate package, instead of inlining it in the same
-// package as the core of your plugin.
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html show window;
+// FIXED HERE: https://github.com/dart-lang/linter/pull/1985
+// ignore_for_file: avoid_web_libraries_in_flutter
+import 'dart:html';
+import 'dart:js';
+import 'dart:math';
+import 'dart:typed_data';
+import 'dart:ui' as ui;
 
-import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:mapbox_flutter/mapbox_flutter.dart';
+import 'package:mapbox_gl_dart/mapbox_gl_dart.dart' hide Point;
+import 'package:mapbox_gl_dart/mapbox_gl_dart.dart' as mapbox show Point;
+import 'package:image/image.dart' hide Point;
 
-/// A web implementation of the MapboxFlutter plugin.
-class MapboxFlutterWeb {
-  static void registerWith(Registrar registrar) {
-    final MethodChannel channel = MethodChannel(
-      'mapbox_flutter',
-      const StandardMethodCodec(),
-      registrar,
-    );
-
-    final pluginInstance = MapboxFlutterWeb();
-    channel.setMethodCallHandler(pluginInstance.handleMethodCall);
-  }
-
-  /// Handles method calls over the MethodChannel of this plugin.
-  /// Note: Check the "federated" architecture for a new way of doing this:
-  /// https://flutter.dev/go/federated-plugins
-  Future<dynamic> handleMethodCall(MethodCall call) async {
-    switch (call.method) {
-      case 'getPlatformVersion':
-        return getPlatformVersion();
-      default:
-        throw PlatformException(
-          code: 'Unimplemented',
-          details: 'mapbox_flutter for web doesn\'t implement \'${call.method}\'',
-        );
-    }
-  }
-
-  /// Returns a [String] containing the version of the platform.
-  Future<String> getPlatformVersion() {
-    final version = html.window.navigator.userAgent;
-    return Future.value(version);
-  }
-}
+part 'web_src/convert.dart';
+part 'web_src/mapbox_flutter_plugin.dart';
+part 'web_src/options_sink.dart';
+part 'web_src/feature_manager/feature_manager.dart';
+part 'web_src/feature_manager/symbol_manager.dart';
+part 'web_src/feature_manager/line_manager.dart';
+part 'web_src/feature_manager/circle_manager.dart';
+part 'web_src/feature_manager/fill_manager.dart';
+part 'web_src/mapbox_flutter_map_controller.dart';
+part 'src/mapbox_flutter_platform_interface.dart';
